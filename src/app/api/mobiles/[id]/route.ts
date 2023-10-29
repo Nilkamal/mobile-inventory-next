@@ -3,6 +3,7 @@ import Mobile from "@/models/mobile";
 import { NextResponse } from "next/server";
 
 export async function PUT(request: any, { params }: any) {
+  const { id } = params;
   const { mobile, quantity, brand, storage, ram } = await request.json();
 
   await connect();
