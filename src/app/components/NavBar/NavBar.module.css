@@ -1,0 +1,18 @@
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navLinks li {
+  list-style-type: none;
+}
+
+.navLinks a {
+  margin-right: 20px;
+}

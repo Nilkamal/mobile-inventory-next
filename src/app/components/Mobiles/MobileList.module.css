@@ -1,0 +1,28 @@
+.header,
+.row {
+  display: flex;
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+.col {
+  flex: 1; /* distributes space on the line equally among items */
+  line-height: 1.5;
+}
+
+header > .col {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.col a {
+  text-decoration: none;
+  color: black;
+  margin: 0 4px;
+}
+
+.noResult {
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+}
