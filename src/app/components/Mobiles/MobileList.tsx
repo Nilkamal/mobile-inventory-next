@@ -8,7 +8,7 @@ export default async function MobileList() {
   const renderMobiles = () => {
     return mobiles?.map(
       ({ mobile, ram, storage, quantity, brand, _id }: Mobile) => (
-        <div className={styles.row}>
+        <div className={styles.row} key={_id.toString()}>
           <div className={styles.col}>{brand}</div>
           <div className={styles.col}>{mobile}</div>
           <div className={styles.col}>
