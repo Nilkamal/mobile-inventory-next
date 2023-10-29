@@ -2,8 +2,7 @@ import connect from "@/libs/mongodb";
 import Mobile from "@/models/mobile";
 import { NextResponse } from "next/server";
 
-export async function PUT(request, { params }) {
-  const { id } = params;
+export async function PUT(request: any, { params }: any) {
   const { mobile, quantity, brand, storage, ram } = await request.json();
 
   await connect();
@@ -15,7 +14,7 @@ export async function PUT(request, { params }) {
   );
 }
 
-export async function GET(request, { params }) {
+export async function GET(request: any, { params }: any) {
   const { id } = params;
   await connect();
 

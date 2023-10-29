@@ -32,9 +32,9 @@ export async function GET() {
   return NextResponse.json(mobiles);
 }
 
-export async function DELETE(request) {
-  const id = request.nextUrl.searchParams.get("id");
-  await connect();
-  await Mobile.findByIdAndDelete(id);
-  return NextResponse.json({ message: "Mobile deleted!" }, { status: 200 });
-}
+// export async function DELETE(request) {
+//   // const id = request.nextUrl.searchParams.get("id");
+//   // await connect();
+//   // await Mobile.findByIdAndDelete(id);
+//   // return NextResponse.json({ message: "Mobile deleted!" }, { status: 200 });
+// }

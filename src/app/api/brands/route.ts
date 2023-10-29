@@ -2,7 +2,7 @@ import connect from "@/libs/mongodb";
 import Brand from "@/models/brand";
 import { NextResponse } from "next/server";
 
-export async function POST(request) {
+export async function POST(request: any) {
   try {
     await connect();
 
