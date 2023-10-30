@@ -23,5 +23,5 @@ export async function POST(request: any) {
 export async function GET() {
   await connect();
   const brands = await Brand.find({});
-  return NextResponse.json({ brands }, { status: 200 });
+  return NextResponse.json(brands, { status: 200 });
 }

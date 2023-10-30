@@ -5,6 +5,7 @@ export default function NavBar() {
   return (
     <header className={styles.header}>
       <nav className={styles.navBar}>
+        <h1>Mahaveer Mobile</h1>
         <ul className={styles.navLinks}>
           <li>
             <Link className={styles.link} href='/'>

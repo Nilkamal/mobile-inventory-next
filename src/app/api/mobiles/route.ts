@@ -7,7 +7,7 @@ export async function POST(request: any) {
   const { mobile, quantity, storage, ram, brand } = await request.json();
   await connect();
 
-  const existing = Mobile.findOne({ mobile, storage, ram, brand });
+  const existing = await Mobile.findOne({ mobile, storage, ram, brand });
 
   if (!existing) {
     await Mobile.create({ mobile, quantity, storage, ram, brand });
@@ -20,9 +20,28 @@ export async function POST(request: any) {
   );
 }
 
-export async function GET() {
+export async function GET(request: any) {
   await connect();
-  const mobiles = await Mobile.find({});
+  const { searchParams } = request.nextUrl;
+  const mobile = searchParams.get("mobile");
+  const storage = searchParams.get("storage");
+  const ram = searchParams.get("ram");
+  const brand = searchParams.get("brand");
+
+  let query: {} | MobileSearch = {};
+  if (mobile) {
+    (query as MobileSearch).mobile = mobile;
+  }
+  if (storage) {
+    (query as MobileSearch).storage = storage;
+  }
+  if (ram) {
+    (query as MobileSearch).ram = ram;
+  }
+  if (brand) {
+    (query as MobileSearch).brand = brand;
+  }
+  const mobiles = await Mobile.find({ ...query });
   const mobilesWithQuantity = mobiles.filter((m) => m.quantity > 0);
   for (let mobile of mobilesWithQuantity) {
     const brandRequest = await Brand.findOne({ _id: mobile.brand });

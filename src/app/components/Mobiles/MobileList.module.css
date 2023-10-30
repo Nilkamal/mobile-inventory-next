@@ -26,3 +26,17 @@ header > .col {
   display: flex;
   font-weight: 700;
 }
+
+.link {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.67rem;
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

@@ -20,5 +20,12 @@ export async function GET(request: any, { params }: any) {
   await connect();
 
   const mobile = await Mobile.findOne({ _id: id });
-  return NextResponse.json({ mobile }, { status: 200 });
+  return NextResponse.json(mobile, { status: 200 });
+}
+
+export async function DELETE(request: any, { params }: any) {
+  const { id } = params;
+
+  await Mobile.findByIdAndDelete(id);
+  return NextResponse.json({ message: "Mobile deleted!" }, { status: 200 });
 }
