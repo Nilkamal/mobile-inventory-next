@@ -67,7 +67,9 @@ export default function Edit() {
           >
             <option selected>--Select Brand--</option>
             {brands.map(({ _id, brand }: Brand) => (
-              <option value={_id.toString()}>{brand}</option>
+              <option key={_id.toString()} value={_id.toString()}>
+                {brand}
+              </option>
             ))}
           </select>
         </label>
