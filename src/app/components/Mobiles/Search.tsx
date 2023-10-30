@@ -70,7 +70,7 @@ export default function Search({ onSearch, onClear }: SearchProps) {
             <input
               type='text'
               id='mobile'
-              value={formData.mobile}
+              value={formData.mobile.toString()}
               name='mobile'
               onChange={handleChange}
               className={styles.formControl}
@@ -83,7 +83,7 @@ export default function Search({ onSearch, onClear }: SearchProps) {
             <input
               type='number'
               id='ram'
-              value={formData.ram}
+              value={formData.ram.toString()}
               name='ram'
               onChange={handleChange}
               className={styles.formControl}
@@ -97,7 +97,7 @@ export default function Search({ onSearch, onClear }: SearchProps) {
             <input
               type='number'
               id='storage'
-              value={formData.storage}
+              value={formData.storage.toString()}
               name='storage'
               onChange={handleChange}
               className={styles.formControl}
