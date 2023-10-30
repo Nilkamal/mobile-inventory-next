@@ -1,10 +1,19 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import getMobiles from "../../services/getMobiles";
 import styles from "./MobileList.module.css";
 import Link from "next/link";
 
-export default async function MobileList() {
-  const mobiles = await getMobiles();
+export default function MobileList() {
+  const [mobiles, setMobiles] = useState<Mobile[]>([]);
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getMobiles();
+      setMobiles(data);
+    };
+    getData();
+  }, []);
   const renderMobiles = () => {
     return mobiles?.map(
       ({ mobile, ram, storage, quantity, brand, _id }: Mobile) => (
